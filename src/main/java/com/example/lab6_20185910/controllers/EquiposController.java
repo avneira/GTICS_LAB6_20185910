@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/equipos")
 public class EquiposController {
     @GetMapping("/verEquipos")
-    public String index(){
+    public String ind(){
         return "Equipos/equiposLista";
     }
 }

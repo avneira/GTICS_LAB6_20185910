@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
     @RequestMapping("/estadisticas")
     public class EstadisticasController {
         @GetMapping("/verEstadisticas")
-        public String index(){
+        public String ind(){
             return "Equipos/estadisticasLista";
         }
     }
