@@ -35,6 +35,18 @@
              <td th:text="${equipoPorPais.getCantidadEquipos()}"></td>
             </tr>
         </table>
+
+    <h4>Cantidad de empleados por región minimo</h4>
+    <table class="table table-sm">
+        <tr>
+            <th>Región</th>
+            <th>Cantidad de empleados</th>
+        </tr>
+        <tr th:each=" equipoPorPais : ${listaEquiposPorPaisMin}">
+            <td th:text="${equipoPorPais.getPais()}">
+            <td th:text="${equipoPorPais.getCantidadEquipos()}"></td>
+        </tr>
+    </table>
     </main>
 </body>
 </html>
