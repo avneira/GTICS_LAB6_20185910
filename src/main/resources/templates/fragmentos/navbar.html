@@ -2,33 +2,31 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Título de tu página</title> <!-- Agrega un título a tu página -->
 </head>
 <body>
-    <div th:fragment="navbar">
-
+<div th:fragment="navbar">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" th:ref="@{/ind}" >GTICS F</a>
+            <a class="navbar-brand" th:href="@{/ind}" >GTICS F</a> <!-- Corrige th:ref a th:href -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse" >
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link "  th:ref="@{/sitios}" >Sitios</a>
+                        <a class="nav-link" th:href="@{/sitios}">Sitios</a> <!-- Corrige th:ref a th:href -->
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" th:href="@{/equipos}">Equipos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " th:href="@{/estadisticas}">Estadísticas</a>
+                        <a class="nav-link" th:href="@{/estadisticas}">Estadísticas</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-
-    <div>
+</div>
 </body>
 </html>

@@ -4,7 +4,52 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
+<body>
+<div th:insert="~{fragments/navbar.html :: navbar}"></div>
+<br>
+
+
+<main>
+    <div class="container px-4 py-5">
+        <div class="text-center">
+            <h1 class="pb-2 border-bottom">Equipos</h1>
+        </div>
+        <div class="d-flex mt-3 mb-4">
+            <a class="btn btn-primary" th:href="@{/equipos/new}">Nuevo equipo</a>
+        </div>
+        <table class="table">
+            <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Tipo</th>
+                <th>Modelo</th>
+                <th>Numero serie</th>
+                <th>Sitio</th>
+                <th>Acciones</th>
+
+
+            </tr>
+            <tr th:each="equipo, info : ${listaEquipos}">
+                <td  th:text="${info.index + 1}"></td>
+                <td th:text="${equipos.deviceName}"></td>
+                <td th:text="${equipo.deviceType}"></td>
+                <td th:text="${equipo.model}"></td>
+                <td th:text="${equipo.serialNumber}"></td>
+                <td th:text="${equipo.serialNumber}"></td>
+
+                <td> <a class="btn btn-primary"
+                       th:href="@{'/equipo/editar?id=' + ${equipo.deviceid}}">Editar</a>
+                    <a class="btn btn-danger"
+                       th:href="@{'/equipo/borrar?id=' + ${equipo.deviceid}}">Borrar</a>
+                </td>
+
+            </tr>
+        </table>
+    </div>
+</main>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
 </html>
