@@ -14,7 +14,7 @@ public class Site {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "siteID", nullable = false)
-    private Integer sideid;
+    private Integer siteid;
 
     @Column(name = "sitename")
     private String sitename;

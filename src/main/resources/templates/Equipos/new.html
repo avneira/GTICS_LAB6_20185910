@@ -35,7 +35,7 @@
             <label for="siteID" class="form-label">Selector de Sitios</label>
             <select class="form-select" name="siteID" id="siteID">
                 <option th:each="sitios: ${listaSitios}"
-                        th:text="${sitios.siteName}" th:value="${sitios.id}">Open this select menu</option>
+                        th:text="${sitios.sitename}" th:value="${sitios.siteid}">Open this select menu</option>
             </select>
             <label class="form-label">Sitio</label>
         </div>

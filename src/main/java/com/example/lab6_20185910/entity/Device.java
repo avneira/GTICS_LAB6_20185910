@@ -18,7 +18,7 @@ public class Device {
     private String deviceName;
 
     @Column(name = "deviceType")
-    private String deviceype;
+    private String deviceType;
 
     @Column(name = "model")
     private String model;

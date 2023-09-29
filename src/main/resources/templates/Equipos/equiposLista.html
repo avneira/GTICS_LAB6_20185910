@@ -33,7 +33,7 @@
             </tr>
             <tr th:each="equipo, info : ${listaEquipos}">
                 <td  th:text="${info.index + 1}"></td>
-                <td th:text="${equipos.deviceName}"></td>
+                <td th:text="${equipo.deviceName}"></td>
                 <td th:text="${equipo.deviceType}"></td>
                 <td th:text="${equipo.model}"></td>
                 <td th:text="${equipo.serialNumber}"></td>
