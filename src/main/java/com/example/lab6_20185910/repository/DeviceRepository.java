@@ -18,6 +18,34 @@ public interface DeviceRepository extends JpaRepository<Device,Integer> {
     )
     List<EquiposPorPaisDto> obtenerEquiposPorPais();
 
+    @Query(nativeQuery = true,
+            value = "select c.country as country, count(d.deviceid) as cantidadequipos " +
+            "FROM country r\n" +
+            "inner join site s on (c.countryid = s.siteid)\n" +
+            "inner join devicesite ds on (s.siteid = ds.siteid)\n" +
+            "inner join devices d on (d.deviceid = ds.deviceid)\n" +
+            "gruop by c.countryid\n" +
+                    "having cantidadequipos>=?1\n"+
+                    "order by cantidadequipos DESC"
+
+
+    )
+    List<EquiposPorPaisDto> obtenerEquiposPorPaisMax();
+
+    @Query(nativeQuery = true,
+            value = "select c.country as country, count(d.deviceid) as cantidadequipos " +
+                    "FROM country r\n" +
+                    "inner join site s on (c.countryid = s.siteid)\n" +
+                    "inner join devicesite ds on (s.siteid = ds.siteid)\n" +
+                    "inner join devices d on (d.deviceid = ds.deviceid)\n" +
+                    "gruop by c.countryid\n" +
+                    "having cantidadequipos>=?1\n"+
+                    "order by cantidadequipos ASC"
+
+
+    )
+    List<EquiposPorPaisDto> obtenerEquiposPorPaisMin();
+
 }
 
 

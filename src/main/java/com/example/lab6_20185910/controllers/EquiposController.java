@@ -70,7 +70,10 @@ public class EquiposController {
 
     @GetMapping("/stats")
     public String estadisticas(Model model){
+
         model.addAttribute("listaEquiposPorPais", deviceRepository.obtenerEquiposPorPais());
+        model.addAttribute("listaEquiposPorPaisMin", deviceRepository.obtenerEquiposPorPaisMin());
+        model.addAttribute("listaEquiposPorPaisMax", deviceRepository.obtenerEquiposPorPaisMax());
         return "Equipos/estadisticas";
     }
 }
