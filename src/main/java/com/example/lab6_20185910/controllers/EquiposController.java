@@ -67,4 +67,10 @@ public class EquiposController {
         return "redirect:/equipos";
 
     }
+
+    @GetMapping("/stats")
+    public String estadisticas(Model model){
+        model.addAttribute("listaEquiposPorPais", deviceRepository.obtenerEquiposPorPais());
+        return "Equipos/estadisticas";
+    }
 }

@@ -20,4 +20,5 @@ public class Location {
     @Column(name = "Country")
     private String country;
 
+
 }
